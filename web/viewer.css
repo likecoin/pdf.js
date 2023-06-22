@@ -30,18 +30,18 @@
   --doorhanger-icon-opacity: 0.9;
 
   --main-color: rgba(12, 12, 13, 1);
-  --body-bg-color: rgba(212, 212, 215, 1);
-  --progressBar-color: rgba(10, 132, 255, 1);
+  --body-bg-color: #235760;
+  --progressBar-color: #50e3c2;
   --progressBar-bg-color: rgba(221, 221, 222, 1);
-  --progressBar-blend-color: rgba(116, 177, 239, 1);
+  --progressBar-blend-color: #1aa384;
   --scrollbar-color: auto;
   --scrollbar-bg-color: auto;
   --toolbar-icon-bg-color: rgba(0, 0, 0, 1);
   --toolbar-icon-hover-bg-color: rgba(0, 0, 0, 1);
 
   --sidebar-narrow-bg-color: rgba(212, 212, 215, 0.9);
-  --sidebar-toolbar-bg-color: rgba(245, 246, 247, 1);
-  --toolbar-bg-color: rgba(249, 249, 250, 1);
+  --sidebar-toolbar-bg-color: #1e4a51;
+  --toolbar-bg-color: #28646e;
   --toolbar-border-color: rgba(184, 184, 184, 1);
   --toolbar-box-shadow: 0 1px 0 var(--toolbar-border-color);
   --toolbar-border-bottom: none;
@@ -49,15 +49,15 @@
       rgba(0, 0, 0, 0.25),
     0 1px 0 rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
   --toolbarSidebar-border-bottom: none;
-  --button-hover-color: rgba(221, 222, 223, 1);
+  --button-hover-color: #245b64;
   --toggled-btn-color: rgba(0, 0, 0, 1);
   --toggled-btn-bg-color: rgba(0, 0, 0, 0.3);
   --toggled-hover-active-btn-color: rgba(0, 0, 0, 0.4);
-  --dropdown-btn-bg-color: rgba(215, 215, 219, 1);
+  --dropdown-btn-bg-color: #1e4a51;
   --dropdown-btn-border: none;
   --separator-color: rgba(0, 0, 0, 0.3);
   --field-color: rgba(6, 6, 6, 1);
-  --field-bg-color: rgba(255, 255, 255, 1);
+  --field-bg-color: #1e4a51;
   --field-border-color: rgba(187, 187, 188, 1);
   --treeitem-color: rgba(0, 0, 0, 0.8);
   --treeitem-bg-color: rgba(0, 0, 0, 0.15);
@@ -66,10 +66,10 @@
   --treeitem-selected-bg-color: rgba(0, 0, 0, 0.25);
   --thumbnail-hover-color: rgba(0, 0, 0, 0.1);
   --thumbnail-selected-color: rgba(0, 0, 0, 0.2);
-  --doorhanger-bg-color: rgba(255, 255, 255, 1);
+  --doorhanger-bg-color: #28646e;
   --doorhanger-border-color: rgba(12, 12, 13, 0.2);
   --doorhanger-hover-color: rgba(12, 12, 13, 1);
-  --doorhanger-hover-bg-color: rgba(237, 237, 237, 1);
+  --doorhanger-hover-bg-color: #245b64;
   --doorhanger-separator-color: rgba(222, 222, 222, 1);
   --dialog-button-border: none;
   --dialog-button-bg-color: rgba(12, 12, 13, 0.1);
