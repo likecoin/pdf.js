@@ -22,17 +22,17 @@
   --toolbar-icon-opacity: 1;
   --doorhanger-icon-opacity: 0.9;
 
-  --main-color: rgba(12, 12, 13, 1);
-  --body-bg-color: rgba(212, 212, 215, 1);
-  --scrollbar-color: auto;
-  --scrollbar-bg-color: auto;
+  --main-color: rgba(249, 249, 250, 1)
+  --body-bg-color: #235760;
+  --scrollbar-color: rgba(121, 121, 123, 1);
+  --scrollbar-bg-color: rgba(35, 35, 39, 1);
   --dialog-button-border: none;
-  --dialog-button-bg-color: rgba(12, 12, 13, 0.1);
-  --dialog-button-hover-bg-color: rgba(12, 12, 13, 0.3);
+  --dialog-button-bg-color: rgba(92, 92, 97, 1);
+  --dialog-button-hover-bg-color: rgba(115, 115, 115, 1);
 
-  --toolbar-bg-color: #f9f9fb;
-  --toolbar-divider-color: #e0e0e6;
-  --toolbar-fg-color: #15141a;
+  --toolbar-bg-color: #28646e;
+  --toolbar-divider-color: rgba(12, 12, 13, 1);
+  --toolbar-fg-color: #fbfbfe;
 
   --toolbarButton-download-icon: url(images/gv-toolbarButton-download.svg);
   --toolbarButton-openinapp-icon: url(images/gv-toolbarButton-openinapp.svg);
@@ -40,21 +40,6 @@
 
 :root:dir(rtl) {
   --dir-factor: -1;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --main-color: rgba(249, 249, 250, 1);
-    --body-bg-color: rgba(42, 42, 46, 1);
-    --scrollbar-color: rgba(121, 121, 123, 1);
-    --scrollbar-bg-color: rgba(35, 35, 39, 1);
-    --dialog-button-bg-color: rgba(92, 92, 97, 1);
-    --dialog-button-hover-bg-color: rgba(115, 115, 115, 1);
-
-    --toolbar-bg-color: #2b2a33;
-    --toolbar-divider-color: #5b5b66;
-    --toolbar-fg-color: #fbfbfe;
-  }
 }
 
 @media screen and (forced-colors: active) {
