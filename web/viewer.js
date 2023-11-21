@@ -179,6 +179,10 @@ function getViewerConfiguration() {
         ? document.getElementById("fileInput")
         : null,
     debuggerScriptPath: "./debugger.mjs",
+    canDownload:
+      new URLSearchParams(window.location.search).get("download") !== "0",
+    canPrint:
+      new URLSearchParams(window.location.search).get("download") !== "0",
   };
 }
 
