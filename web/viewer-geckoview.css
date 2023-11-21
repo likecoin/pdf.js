@@ -22,20 +22,20 @@
   --toolbar-icon-opacity: 1;
   --doorhanger-icon-opacity: 0.9;
 
-  --main-color: rgba(249, 249, 250, 1);
+  --main-color: rgb(249 249 250);
   --body-bg-color: #235760;
-  --scrollbar-color: rgba(121, 121, 123, 1);
-  --scrollbar-bg-color: rgba(35, 35, 39, 1);
-  --field-color: rgba(6, 6, 6, 1);
-  --field-bg-color: rgba(255, 255, 255, 1);
-  --field-border-color: rgba(187, 187, 188, 1);
-  --doorhanger-bg-color: rgba(255, 255, 255, 1);
+  --scrollbar-color: rgb(121 121 123);
+  --scrollbar-bg-color: rgb(35 35 39);
+  --field-color: rgb(6 6 6);
+  --field-bg-color: rgb(255 255 255);
+  --field-border-color: rgb(187 187 188);
+  --doorhanger-bg-color: rgb(255 255 255);
   --dialog-button-border: none;
-  --dialog-button-bg-color: rgba(92, 92, 97, 1);
-  --dialog-button-hover-bg-color: rgba(115, 115, 115, 1);
+  --dialog-button-bg-color: rgb(92 92 97);
+  --dialog-button-hover-bg-color: rgb(115 115 115);
 
   --toolbar-bg-color: #28646e;
-  --toolbar-divider-color: rgba(12, 12, 13, 1);
+  --toolbar-divider-color: rgb(12 12 13);
   --toolbar-fg-color: #fbfbfe;
   --toolbar-height: 48px;
   --toolbar-border-width: 1px;
