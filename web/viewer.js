@@ -222,6 +222,15 @@ function getViewerConfiguration() {
       editorHighlightShowAll: document.getElementById("editorHighlightShowAll"),
     },
     printContainer: document.getElementById("printContainer"),
+    openFileInput:
+      typeof PDFJSDev === "undefined" || PDFJSDev.test("GENERIC")
+        ? document.getElementById("fileInput")
+        : null,
+    debuggerScriptPath: "./debugger.mjs",
+    canDownload:
+      new URLSearchParams(window.location.search).get("download") !== "0",
+    canPrint:
+      new URLSearchParams(window.location.search).get("download") !== "0",
   };
 }
 

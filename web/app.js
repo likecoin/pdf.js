@@ -182,6 +182,8 @@ const PDFViewerApplication = {
   _isCtrlKeyDown: false,
   _caretBrowsing: null,
   _isScrolling: false,
+  canDownload: true,
+  canPrint: true,
 
   // Called once when the document is loaded.
   async initialize(appConfig) {
@@ -259,6 +261,9 @@ const PDFViewerApplication = {
 
     this._initializedCapability.settled = true;
     this._initializedCapability.resolve();
+
+    this.canDownload = appConfig.canDownload;
+    this.canPrint = appConfig.canPrint;
   },
 
   /**
@@ -766,6 +771,13 @@ const PDFViewerApplication = {
     } else {
       throw new Error("Not implemented: run");
     }
+
+    if (!this.canDownload) {
+      this._hideDownloadButtons();
+    }
+    if (!this.canPrint) {
+      this._hidePrintButtons();
+    }
   },
 
   get externalServices() {
@@ -935,6 +947,24 @@ const PDFViewerApplication = {
     if (secondaryToolbar?.presentationModeButton.classList.contains("hidden")) {
       document.getElementById("viewBookmarkSeparator")?.classList.add("hidden");
     }
+  },
+
+  /**
+   * @private
+   */
+  _hidePrintButtons() {
+    const { toolbar, secondaryToolbar } = this.appConfig;
+    toolbar?.print.classList.add("hidden");
+    secondaryToolbar?.printButton.classList.add("hidden");
+  },
+
+  /**
+   * @private
+   */
+  _hideDownloadButtons() {
+    const { toolbar, secondaryToolbar } = this.appConfig;
+    toolbar?.download.classList.add("hidden");
+    secondaryToolbar?.downloadButton.classList.add("hidden");
   },
 
   /**
@@ -1128,6 +1158,9 @@ const PDFViewerApplication = {
   },
 
   async downloadOrSave() {
+    if (!this.canDownload) {
+      return;
+    }
     // In the Firefox case, this method MUST always trigger a download.
     // When the user is closing a modified and unsaved document, we display a
     // prompt asking for saving or not. In case they save, we must wait for
@@ -1774,6 +1807,9 @@ const PDFViewerApplication = {
   },
 
   beforePrint() {
+    if (!this.canPrint) {
+      return;
+    }
     this._printAnnotationStoragePromise = this.pdfScriptingManager
       .dispatchWillPrint()
       .catch(() => {
@@ -1828,6 +1864,9 @@ const PDFViewerApplication = {
   },
 
   afterPrint() {
+    if (!this.canPrint) {
+      return;
+    }
     if (this._printAnnotationStoragePromise) {
       this._printAnnotationStoragePromise.then(() => {
         this.pdfScriptingManager.dispatchDidPrint();
@@ -1857,6 +1896,9 @@ const PDFViewerApplication = {
   },
 
   triggerPrinting() {
+    if (!this.canPrint) {
+      return;
+    }
     if (this.supportsPrinting) {
       window.print();
     }
