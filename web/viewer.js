@@ -229,6 +229,10 @@ function getViewerConfiguration() {
       undoButton: document.getElementById("editorUndoBarUndoButton"),
       closeButton: document.getElementById("editorUndoBarCloseButton"),
     },
+    canDownload:
+      new URLSearchParams(window.location.search).get("download") !== "0",
+    canPrint:
+      new URLSearchParams(window.location.search).get("download") !== "0",
   };
 }
 
