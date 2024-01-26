@@ -1310,6 +1310,11 @@ const PDFViewerApplication = {
           let scrollMode = AppOptions.get("scrollModeOnLoad");
           let spreadMode = AppOptions.get("spreadModeOnLoad");
 
+          if (spreadMode === SpreadMode.UNKNOWN) {
+            spreadMode =
+              innerWidth > innerHeight ? SpreadMode.ODD : SpreadMode.NONE;
+          }
+
           if (stored?.page && viewOnLoad !== ViewOnLoad.INITIAL) {
             hash =
               `page=${stored.page}&zoom=${zoom || stored.zoom},` +
@@ -1323,7 +1328,7 @@ const PDFViewerApplication = {
             if (scrollMode === ScrollMode.UNKNOWN) {
               scrollMode = stored.scrollMode | 0;
             }
-            if (spreadMode === SpreadMode.UNKNOWN) {
+            if (stored.spreadMode) {
               spreadMode = stored.spreadMode | 0;
             }
           }
