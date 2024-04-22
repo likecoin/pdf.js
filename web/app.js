@@ -2109,6 +2109,7 @@ const PDFViewerApplication = {
     window.addEventListener("click", onClick.bind(this), { signal });
     window.addEventListener("keydown", onKeyDown.bind(this), { signal });
     window.addEventListener("keyup", onKeyUp.bind(this), { signal });
+    window.addEventListener("message", webViewerPostMessage);
     window.addEventListener(
       "resize",
       () => eventBus.dispatch("resize", { source: window }),
@@ -3166,6 +3167,24 @@ function onKeyDown(evt) {
 
   if (handled) {
     evt.preventDefault();
+  }
+}
+
+function webViewerPostMessage(evt) {
+  if (evt && evt.data && typeof evt.data === "string") {
+    try {
+      const { action, data } = JSON.parse(evt.data);
+      switch (action) {
+        case "openBase64File":
+          PDFViewerApplication.open({
+            data: atob(data.data),
+            originalUrl: data.name,
+          });
+          break;
+      }
+    } catch (ex) {
+      console.error(`webViewerPostMessage: ${ex}`);
+    }
   }
 }
 
