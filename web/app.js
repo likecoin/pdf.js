@@ -2011,6 +2011,7 @@ const PDFViewerApplication = {
     window.addEventListener("click", webViewerClick, { signal });
     window.addEventListener("keydown", webViewerKeyDown, { signal });
     window.addEventListener("keyup", webViewerKeyUp, { signal });
+    window.addEventListener("message", webViewerPostMessage);
     window.addEventListener(
       "resize",
       () => {
@@ -3254,6 +3255,24 @@ function webViewerKeyDown(evt) {
 
   if (handled) {
     evt.preventDefault();
+  }
+}
+
+function webViewerPostMessage(evt) {
+  if (evt && evt.data && typeof evt.data === "string") {
+    try {
+      const { action, data } = JSON.parse(evt.data);
+      switch (action) {
+        case "openBase64File":
+          PDFViewerApplication.open({
+            data: atob(data.data),
+            originalUrl: data.name,
+          });
+          break;
+      }
+    } catch (ex) {
+      console.error(`webViewerPostMessage: ${ex}`);
+    }
   }
 }
 
