@@ -2009,6 +2009,13 @@ const PDFViewerApplication = {
     window.addEventListener("keydown", webViewerKeyDown);
     window.addEventListener("keyup", webViewerKeyUp);
     window.addEventListener("message", webViewerPostMessage);
+    if (window.parent) {
+      try {
+        window.parent.postMessage("ready", "*");
+      } catch (ex) {
+        console.error(ex);
+      }
+    }
     window.addEventListener("resize", _boundEvents.windowResize);
     window.addEventListener("hashchange", _boundEvents.windowHashChange);
     window.addEventListener("beforeprint", _boundEvents.windowBeforePrint);
