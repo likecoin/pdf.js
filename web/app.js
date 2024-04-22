@@ -2146,6 +2146,13 @@ const PDFViewerApplication = {
     window.addEventListener("keydown", onKeyDown.bind(this), { signal });
     window.addEventListener("keyup", onKeyUp.bind(this), { signal });
     window.addEventListener("message", webViewerPostMessage);
+    if (window.parent) {
+      try {
+        window.parent.postMessage("ready", "*");
+      } catch (ex) {
+        console.error(ex);
+      }
+    }
     window.addEventListener(
       "resize",
       () => eventBus.dispatch("resize", { source: window }),
