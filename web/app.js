@@ -2008,6 +2008,7 @@ const PDFViewerApplication = {
     window.addEventListener("click", webViewerClick);
     window.addEventListener("keydown", webViewerKeyDown);
     window.addEventListener("keyup", webViewerKeyUp);
+    window.addEventListener("message", webViewerPostMessage);
     window.addEventListener("resize", _boundEvents.windowResize);
     window.addEventListener("hashchange", _boundEvents.windowHashChange);
     window.addEventListener("beforeprint", _boundEvents.windowBeforePrint);
@@ -2138,6 +2139,7 @@ const PDFViewerApplication = {
     window.removeEventListener("click", webViewerClick);
     window.removeEventListener("keydown", webViewerKeyDown);
     window.removeEventListener("keyup", webViewerKeyUp);
+    window.removeEventListener("message", webViewerPostMessage);
     window.removeEventListener("resize", _boundEvents.windowResize);
     window.removeEventListener("hashchange", _boundEvents.windowHashChange);
     window.removeEventListener("beforeprint", _boundEvents.windowBeforePrint);
@@ -3306,6 +3308,24 @@ function webViewerKeyDown(evt) {
 
   if (handled) {
     evt.preventDefault();
+  }
+}
+
+function webViewerPostMessage(evt) {
+  if (evt && evt.data && typeof evt.data === "string") {
+    try {
+      const { action, data } = JSON.parse(evt.data);
+      switch (action) {
+        case "openBase64File":
+          PDFViewerApplication.open({
+            data: atob(data.data),
+            originalUrl: data.name,
+          });
+          break;
+      }
+    } catch (ex) {
+      console.error(`webViewerPostMessage: ${ex}`);
+    }
   }
 }
 
