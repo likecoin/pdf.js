@@ -2012,6 +2012,13 @@ const PDFViewerApplication = {
     window.addEventListener("keydown", webViewerKeyDown, { signal });
     window.addEventListener("keyup", webViewerKeyUp, { signal });
     window.addEventListener("message", webViewerPostMessage);
+    if (window.parent) {
+      try {
+        window.parent.postMessage("ready", "*");
+      } catch (ex) {
+        console.error(ex);
+      }
+    }
     window.addEventListener(
       "resize",
       () => {
