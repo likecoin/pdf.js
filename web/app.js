@@ -3178,13 +3178,24 @@ function onKeyDown(evt) {
 }
 
 function webViewerPostMessage(evt) {
-  if (evt && evt.data && typeof evt.data === "string") {
+  if (evt && evt.data) {
     try {
-      const { action, data } = JSON.parse(evt.data);
+      let action, data;
+      if (typeof evt.data === "string") {
+        ({ action, data } = JSON.parse(evt.data));
+      } else {
+        ({ action, data } = evt.data);
+      }
       switch (action) {
         case "openBase64File":
           PDFViewerApplication.open({
             data: atob(data.data),
+            originalUrl: data.name,
+          });
+          break;
+        case "openArrayBufferFile":
+          PDFViewerApplication.open({
+            data: new Uint8Array(data.data),
             originalUrl: data.name,
           });
           break;
