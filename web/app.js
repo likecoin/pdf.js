@@ -3279,14 +3279,14 @@ function webViewerPostMessage(evt) {
           PDFViewerApplication.open({
             data: atob(data.data),
             originalUrl: data.name,
-            filename: `${data.name}.pdf`,
+            filename: data.name ? `${data.name}.pdf` : "liker-land_ebook.pdf",
           });
           break;
         case "openArrayBufferFile":
           PDFViewerApplication.open({
             data: new Uint8Array(data.data),
             originalUrl: data.name,
-            filename: `${data.name}.pdf`,
+            filename: data.name ? `${data.name}.pdf` : "liker-land_ebook.pdf",
           });
           break;
       }
