@@ -3279,12 +3279,14 @@ function webViewerPostMessage(evt) {
           PDFViewerApplication.open({
             data: atob(data.data),
             originalUrl: data.name,
+            filename: `${data.name}.pdf`,
           });
           break;
         case "openArrayBufferFile":
           PDFViewerApplication.open({
             data: new Uint8Array(data.data),
             originalUrl: data.name,
+            filename: `${data.name}.pdf`,
           });
           break;
       }
