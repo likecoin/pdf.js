@@ -3124,19 +3124,21 @@ function webViewerPostMessage(evt) {
       } else {
         ({ action, data } = evt.data);
       }
+      const filename = data.name ? `${data.name}.pdf` : "liker-land_ebook.pdf";
+      const url = `https://liker.land/${filename}`;
       switch (action) {
         case "openBase64File":
           PDFViewerApplication.open({
             data: atob(data.data),
-            originalUrl: data.name,
-            filename: data.name ? `${data.name}.pdf` : "liker-land_ebook.pdf",
+            url,
+            filename,
           });
           break;
         case "openArrayBufferFile":
           PDFViewerApplication.open({
             data: new Uint8Array(data.data),
-            originalUrl: data.name,
-            filename: data.name ? `${data.name}.pdf` : "liker-land_ebook.pdf",
+            url,
+            filename,
           });
           break;
       }
