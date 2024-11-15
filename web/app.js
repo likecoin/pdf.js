@@ -3186,23 +3186,35 @@ function webViewerPostMessage(evt) {
       } else {
         ({ action, data } = evt.data);
       }
-      const filename = data.name ? `${data.name}.pdf` : "liker-land_ebook.pdf";
+      const { data: fileData, name, classId, nftId, wallet } = data;
+      const filename = name ? `${name}.pdf` : "liker-land_ebook.pdf";
       const url = `https://liker.land/${filename}`;
       switch (action) {
         case "openBase64File":
           PDFViewerApplication.open({
-            data: atob(data.data),
+            data: atob(fileData),
             url,
             filename,
           });
           break;
         case "openArrayBufferFile":
           PDFViewerApplication.open({
-            data: new Uint8Array(data.data),
+            data: new Uint8Array(fileData),
             url,
             filename,
           });
           break;
+      }
+      if (window.Sentry) {
+        if (wallet) {
+          window.Sentry.setUser({ id: wallet });
+        }
+        if (classId) {
+          window.Sentry.setTag("classId", classId);
+        }
+        if (nftId) {
+          window.Sentry.setTag("nftId", nftId);
+        }
       }
     } catch (ex) {
       console.error(`webViewerPostMessage: ${ex}`);
