@@ -30,6 +30,18 @@ See https://github.com/adobe-type-tools/cmap-resources
 <!--#endif-->
     <title>PDF.js viewer</title>
 
+    <script>
+      if (typeof Promise.withResolvers === 'undefined') {
+        Promise.withResolvers = function () {
+          let resolve, reject
+          const promise = new Promise((res, rej) => {
+            resolve = res
+            reject = rej
+          })
+          return { promise, resolve, reject }
+        }
+      }
+    </script>
 <!--#if MOZCENTRAL-->
 <!--#include viewer-snippet-firefox-extension.html-->
 <!--#elif CHROME-->
