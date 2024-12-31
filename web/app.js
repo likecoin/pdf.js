@@ -1145,11 +1145,11 @@ const PDFViewerApplication = {
     }
     window.parent.postMessage(
       {
-          event: 'pdfDownload',
-          filename: this._docFilename,
+        event: "pdfDownload",
+        filename: this._docFilename,
       },
-      '*'
-  );
+      "*"
+    );
     this.downloadManager.download(data, this._downloadUrl, this._docFilename);
   },
 
