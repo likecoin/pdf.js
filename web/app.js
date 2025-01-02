@@ -1179,6 +1179,15 @@ const PDFViewerApplication = {
       data = await (this.pdfDocument
         ? this.pdfDocument.getData()
         : this.pdfLoadingTask.getData());
+      if (window.parent) {
+        window.parent.postMessage(
+          {
+            event: "pdfDownload",
+            filename: this._docFilename,
+          },
+          "*"
+        );
+      }
     } catch {
       // When the PDF document isn't ready, simply download using the URL.
     }
