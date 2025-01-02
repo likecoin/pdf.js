@@ -1140,6 +1140,15 @@ const PDFViewerApplication = {
     let data;
     try {
       data = await this.pdfDocument.getData();
+      if (window.parent) {
+        window.parent.postMessage(
+          {
+            event: "pdfDownload",
+            filename: this._docFilename,
+          },
+          "*"
+        );
+      }
     } catch {
       // When the PDF document isn't ready, simply download using the URL.
     }
