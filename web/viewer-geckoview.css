@@ -22,21 +22,21 @@
   --toolbar-icon-opacity: 1;
   --doorhanger-icon-opacity: 0.9;
 
-  --main-color: rgb(12 12 13);
-  --body-bg-color: rgb(212 212 215);
-  --scrollbar-color: auto;
-  --scrollbar-bg-color: auto;
-  --field-color: rgb(6 6 6);
-  --field-bg-color: rgb(255 255 255);
-  --field-border-color: rgb(187 187 188);
+  --main-color: rgb(40 100 110);
+  --body-bg-color: rgb(247 247 247);
+  --scrollbar-color: rgb(155 155 155);
+  --scrollbar-bg-color: rgb(215 236 236);
+  --field-color: rgb(40 100 110);
+  --field-bg-color: rgb(247 247 247);
+  --field-border-color: rgb(170 241 231);
   --doorhanger-bg-color: rgb(255 255 255);
   --dialog-button-border: none;
   --dialog-button-bg-color: rgb(12 12 13 / 0.1);
   --dialog-button-hover-bg-color: rgb(12 12 13 / 0.3);
 
-  --toolbar-bg-color: #f9f9fb;
-  --toolbar-divider-color: #e0e0e6;
-  --toolbar-fg-color: #15141a;
+  --toolbar-bg-color: rgb(247 247 247);
+  --toolbar-divider-color: rgb(170 241 231);
+  --toolbar-fg-color: rgb(40 100 110);
   --toolbar-height: 48px;
   --toolbar-border-width: 1px;
 
@@ -49,20 +49,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-color: rgb(249 249 250);
-    --body-bg-color: rgb(42 42 46);
-    --scrollbar-color: rgb(121 121 123);
-    --scrollbar-bg-color: rgb(35 35 39);
-    --field-color: rgb(250 250 250);
-    --field-bg-color: rgb(64 64 68);
-    --field-border-color: rgb(115 115 115);
+    --main-color: rgb(170 241 231);
+    --body-bg-color: rgb(40 100 110);
+    --scrollbar-color: rgb(170 241 231);
+    --scrollbar-bg-color: rgb(74 74 74);
+    --field-color: rgb(170 241 231);
+    --field-bg-color: rgb(74 74 74);
+    --field-border-color: rgb(80 227 194);
     --doorhanger-bg-color: rgb(74 74 79);
     --dialog-button-bg-color: rgb(92 92 97);
     --dialog-button-hover-bg-color: rgb(115 115 115);
 
-    --toolbar-bg-color: #2b2a33;
-    --toolbar-divider-color: #5b5b66;
-    --toolbar-fg-color: #fbfbfe;
+    --toolbar-bg-color: rgb(74 74 74);
+    --toolbar-divider-color: rgb(155 155 155);
+    --toolbar-fg-color: rgb(170 241 231);
   }
 }
 

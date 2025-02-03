@@ -35,20 +35,20 @@
   --doorhanger-icon-opacity: 0.9;
   --doorhanger-height: 8px;
 
-  --main-color: rgb(12 12 13);
-  --body-bg-color: rgb(212 212 215);
-  --progressBar-color: rgb(10 132 255);
-  --progressBar-bg-color: rgb(221 221 222);
-  --progressBar-blend-color: rgb(116 177 239);
-  --scrollbar-color: auto;
-  --scrollbar-bg-color: auto;
-  --toolbar-icon-bg-color: rgb(0 0 0);
-  --toolbar-icon-hover-bg-color: rgb(0 0 0);
+  --main-color: rgb(40 100 110);
+  --body-bg-color: rgb(247 247 247);
+  --progressBar-color: rgb(80 227 194);
+  --progressBar-bg-color: rgb(215 236 236);
+  --progressBar-blend-color: rgb(170 241 231);
+  --scrollbar-color: rgb(155 155 155);
+  --scrollbar-bg-color: rgb(215 236 236);
+  --toolbar-icon-bg-color: rgb(40 100 110);
+  --toolbar-icon-hover-bg-color: rgb(80 227 194);
 
-  --sidebar-narrow-bg-color: rgb(212 212 215 / 0.9);
-  --sidebar-toolbar-bg-color: rgb(245 246 247);
-  --toolbar-bg-color: rgb(249 249 250);
-  --toolbar-border-color: rgb(184 184 184);
+  --sidebar-narrow-bg-color: rgb(247 247 247 / 0.9);
+  --sidebar-toolbar-bg-color: rgb(215 236 236);
+  --toolbar-bg-color: rgb(247 247 247);
+  --toolbar-border-color: rgb(170 241 231);
   --toolbar-box-shadow: 0 1px 0 var(--toolbar-border-color);
   --toolbar-border-bottom: none;
   --toolbarSidebar-box-shadow:
@@ -141,20 +141,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-color: rgb(249 249 250);
-    --body-bg-color: rgb(42 42 46);
-    --progressBar-color: rgb(0 96 223);
-    --progressBar-bg-color: rgb(40 40 43);
-    --progressBar-blend-color: rgb(20 68 133);
-    --scrollbar-color: rgb(121 121 123);
-    --scrollbar-bg-color: rgb(35 35 39);
-    --toolbar-icon-bg-color: rgb(255 255 255);
-    --toolbar-icon-hover-bg-color: rgb(255 255 255);
+    --main-color: rgb(170 241 231);
+    --body-bg-color: rgb(40 100 110);
+    --progressBar-color: rgb(80 227 194);
+    --progressBar-bg-color: rgb(74 74 74);
+    --progressBar-blend-color: rgb(170 241 231);
+    --scrollbar-color: rgb(170 241 231);
+    --scrollbar-bg-color: rgb(74 74 74);
+    --toolbar-icon-bg-color: rgb(170 241 231);
+    --toolbar-icon-hover-bg-color: rgb(80 227 194);
 
-    --sidebar-narrow-bg-color: rgb(42 42 46 / 0.9);
-    --sidebar-toolbar-bg-color: rgb(50 50 52);
-    --toolbar-bg-color: rgb(56 56 61);
-    --toolbar-border-color: rgb(12 12 13);
+    --sidebar-narrow-bg-color: rgb(40 100 110 / 0.9);
+    --sidebar-toolbar-bg-color: rgb(74 74 74);
+    --toolbar-bg-color: rgb(74 74 74);
+    --toolbar-border-color: rgb(40 100 110);
     --toggled-btn-color: rgb(255 255 255);
     --toggled-btn-bg-color: rgb(0 0 0 / 0.3);
     --toggled-hover-active-btn-color: rgb(0 0 0 / 0.4);
